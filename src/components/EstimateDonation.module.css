@@ -1,7 +1,113 @@
 .form h2 {
+  margin-bottom: 2rem;
+}
+
+.form form {
+  padding-right: 5rem;
+}
+
+.formFeedback {
+
+  padding: 1rem 1rem 0;
+  text-align: center;
 
 }
 
 .formFeedback:empty {
   display: none;
+}
+
+.formRow {
+
+  align-items: center;
+  display: flex;
+  margin-bottom: 1rem;
+
+}
+
+.formRow label {
+
+  font-weight: 600;
+  width: 120px;
+
+}
+
+.formRow input {
+
+  flex: 1;
+  width: 0;
+
+}
+
+.form input[type="submit"] {
+  margin: .5rem 0 0 120px;
+}
+
+@media (max-width: 1080px) {
+
+  .form form {
+    padding-right: 2.5rem;
+  }
+
+}
+
+@media (max-width: 780px) {
+
+  .form h2 {
+    text-align: center;
+  }
+
+  .form form {
+    padding-right: 0;
+  }
+
+  .formRow {
+    padding-right: 160px;
+  }
+  
+  .formRow label {
+    width: 160px;
+  }
+
+  .form input[type="submit"] {
+
+    display: block;
+    margin: 0.5rem auto 0;
+
+  }
+
+}
+
+@media (max-width: 580px) {
+
+  .form h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .formRow {
+
+    flex-wrap: wrap;
+    padding: 0;
+
+  }
+
+  .formRow label {
+
+    margin-bottom: 0.25rem;
+    width: 100%;
+
+  }
+
+  .form input[type="submit"] {
+    margin-top: 1.5rem;
+  }
+
+}
+
+@media (max-width: 380px) {
+
+  .form h2 {
+    padding: 0 2rem;
+  }
+
 }

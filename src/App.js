@@ -5,9 +5,14 @@ import styles           from './App.module.css'
 const estimateProps = {
   heading: 'Support us from the US',
   conversion: 'USDGBP',
+  currencyToSymbol: '£',
   labels: {
     amount: 'Amount (USD)',
     estimate: 'Estimate (GBP)'
+  },
+  placeholders: {
+    amount: 'Enter amount in USD',
+    estimate: '£'
   }
 }
 

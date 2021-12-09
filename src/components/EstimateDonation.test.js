@@ -6,10 +6,12 @@ describe('The EstimateDonation component', () => {
 
   const stubbedProps = {
     conversion: 'USDGBP',
+    currencyToSymbol: '£',
     labels: {
       amount: 'Amount (USD)',
       estimate: 'Estimate (GBP)'
-    }
+    },
+    placeholders: {}
   }
 
   const failureMessage = 'Sorry an unexpected error occured, please try again later'
@@ -66,7 +68,7 @@ describe('The EstimateDonation component', () => {
     
     await waitFor(() => expect(fetchMock).toHaveBeenCalledTimes(1))
 
-    expect(estimateField).toHaveValue('35.97')
+    expect(estimateField).toHaveValue('£35.97')
     
   })
 
@@ -124,7 +126,7 @@ describe('The EstimateDonation component', () => {
     
     await waitFor(() => expect(fetchMock).toHaveBeenCalledTimes(1))
 
-    expect(estimateField).toHaveValue('0.72')
+    expect(estimateField).toHaveValue('£0.72')
 
   })
 

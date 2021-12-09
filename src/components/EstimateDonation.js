@@ -2,7 +2,7 @@ import { useState }     from 'react'
 import formatAsCurrency from '../inc/format-as-currency'
 import styles           from './EstimateDonation.module.css'
 
-const EstimateDonation = ({ heading, conversion, labels }) => {
+const EstimateDonation = ({ heading, conversion, currencyToSymbol, labels, placeholders }) => {
 
   const [amount, setAmount]     = useState('')
   const [estimate, setEstimate] = useState('')
@@ -37,7 +37,7 @@ const EstimateDonation = ({ heading, conversion, labels }) => {
         return
       }
 
-      setEstimate((amount * rate).toFixed(2))
+      setEstimate(`${currencyToSymbol}${(amount * rate).toFixed(2)}`)
 
     } catch (error) {
 
@@ -52,9 +52,15 @@ const EstimateDonation = ({ heading, conversion, labels }) => {
     <div className={styles.form}>
       { heading ? <h2>{heading}</h2> : ''}
       <form onSubmit={handleSubmit}>
-        <label htmlFor="amount">{labels.amount}<input type="text" name="amount" id="amount" value={amount} autoFocus onChange={handleAmount} /></label>
-        <label>{labels.estimate}<input type="text" name="estimate" value={estimate} readOnly /></label>
-        <input type="submit" value="Calculate" />
+        <div className={styles.formRow}>
+          <label htmlFor="amount">{labels.amount || ''}</label>
+          <input type="text" name="amount" id="amount" value={amount} placeholder={placeholders.amount || ''} autoFocus onChange={handleAmount} />
+        </div>
+        <div className={styles.formRow}>
+          <label htmlFor="estimate">{labels.estimate || ''}</label>
+          <input type="text" name="estimate" id="estimate" value={estimate} placeholder={placeholders.estimate || ''} readOnly />
+        </div>
+        <input type="submit" value="Calculate" className="Button" />
         <div className={styles.formFeedback}>{message}</div>
       </form>
     </div>

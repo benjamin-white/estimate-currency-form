@@ -12,8 +12,8 @@
 .appInner {
 
   display: flex;
-  margin: 0 -1rem;
-  width: 66.666%;
+  margin: 0 -1.5rem;
+  width: calc(100% / 12 * 8);
 
 }
 
@@ -21,6 +21,49 @@
 
   flex-basis: 50%;
   max-width: 50%;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
+
+}
+
+@media (max-width: 1300px) {
+
+  .appInner {
+    width: calc(100% / 12 * 10);
+  }
+
+}
+
+@media (max-width: 1080px) {
+
+  .appInner {
+
+    margin: 0 -1.5rem;
+    min-width: 100%;
+    width: auto;
+
+  }
+
+  .appInner > div {
+    padding: 0 1.5rem;
+  }
+
+}
+
+@media (max-width: 780px) {
+
+  .appInner{
+    flex-direction: column;
+  }
+
+  .appInner > div {
+
+    flex-basis: 100%;
+    max-width: 100%;
+
+  }
+
+  .appInner > div:first-of-type {
+    margin-bottom: 2rem;
+  }
 
 }
