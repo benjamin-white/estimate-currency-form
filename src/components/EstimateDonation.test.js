@@ -6,7 +6,7 @@ describe('The EstimateDonation component', () => {
 
   const stubbedProps = {
     conversion: 'USDGBP',
-    currencyToSymbol: '£',
+    currencySymbol: '£',
     labels: {
       amount: 'Amount (USD)',
       estimate: 'Estimate (GBP)'

@@ -2,7 +2,7 @@ import { useState }     from 'react'
 import formatAsCurrency from '../inc/format-as-currency'
 import styles           from './EstimateDonation.module.css'
 
-const EstimateDonation = ({ heading, conversion, currencyToSymbol, labels, placeholders }) => {
+const EstimateDonation = ({ heading, conversion, currencySymbol, labels, placeholders }) => {
 
   const [amount, setAmount]     = useState('')
   const [estimate, setEstimate] = useState('')
@@ -37,7 +37,7 @@ const EstimateDonation = ({ heading, conversion, currencyToSymbol, labels, place
         return
       }
 
-      setEstimate(`${currencyToSymbol}${(amount * rate).toFixed(2)}`)
+      setEstimate(`${currencySymbol}${(amount * rate).toFixed(2)}`)
 
     } catch (error) {
 
